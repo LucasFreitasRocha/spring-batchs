@@ -22,7 +22,7 @@ public class MigratePersonStepConfig {
     ) {
         return  stepBuilderFactory
                 .get("migratePersonStep")
-                .<Person, Person>chunk(1)
+                .<Person, Person>chunk(1000)
                 .reader(filePersonReader)
                 .writer(filePersonWriter)
                 .build();

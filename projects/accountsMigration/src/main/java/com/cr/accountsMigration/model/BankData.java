@@ -1,52 +1,52 @@
 package com.cr.accountsMigration.model;
 
 public class BankData {
-    private Integer id;
-    private Integer personId;
-    private Integer agency;
-    private Integer account;
-    private Integer bank;
+    private int id;
+    private int personId;
+    private int agency;
+    private int account;
+    private int bank;
 
     public BankData() {
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getPersonId() {
+    public int getPersonId() {
         return personId;
     }
 
-    public void setPersonId(Integer personId) {
+    public void setPersonId(int personId) {
         this.personId = personId;
     }
 
-    public Integer getAgency() {
+    public int getAgency() {
         return agency;
     }
 
-    public void setAgency(Integer agency) {
+    public void setAgency(int agency) {
         this.agency = agency;
     }
 
-    public Integer getAccount() {
+    public int getAccount() {
         return account;
     }
 
-    public void setAccount(Integer account) {
+    public void setAccount(int account) {
         this.account = account;
     }
 
-    public Integer getBank() {
+    public int getBank() {
         return bank;
     }
 
-    public void setBank(Integer bank) {
+    public void setBank(int bank) {
         this.bank = bank;
     }
 }

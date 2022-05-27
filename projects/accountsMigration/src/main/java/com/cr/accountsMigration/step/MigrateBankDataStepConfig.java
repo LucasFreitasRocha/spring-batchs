@@ -24,7 +24,7 @@ public class MigrateBankDataStepConfig {
     ){
         return  stepBuilderFactory
                 .get("migrateBankDataStep")
-                .<BankData, BankData>chunk(1)
+                .<BankData, BankData>chunk(1000)
                 .reader(fileBankDataReader)
                 .writer(fileBankDatawriter)
                 .build();

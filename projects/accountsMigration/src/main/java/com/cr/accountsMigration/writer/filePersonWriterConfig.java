@@ -1,5 +1,12 @@
 package com.cr.accountsMigration.writer;
 
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+
 import com.cr.accountsMigration.model.Person;
 import org.springframework.batch.item.database.ItemPreparedStatementSetter;
 import org.springframework.batch.item.database.JdbcBatchItemWriter;
@@ -7,12 +14,6 @@ import org.springframework.batch.item.database.builder.JdbcBatchItemWriterBuilde
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import javax.sql.DataSource;
-import java.sql.Date;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-import java.time.ZoneId;
 
 @Configuration
 public class filePersonWriterConfig {
@@ -23,7 +24,7 @@ public class filePersonWriterConfig {
     ){
         return new JdbcBatchItemWriterBuilder<Person>()
                 .dataSource(dataSource)
-                .sql("INSERT INTO bank_data(id, name,email,bday,age )" +
+                .sql("INSERT INTO person(id, name,email,bday,age )" +
                         "VALUES (?,?,?,?,?)")
                 .itemPreparedStatementSetter(itemPreparedStatementSetter())
                 .build();
