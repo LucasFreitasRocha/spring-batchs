@@ -1,5 +1,7 @@
 package com.cr.accountsMigration.model;
 
+import org.apache.logging.log4j.util.Strings;
+
 import java.time.LocalDateTime;
 
 public class Person {
@@ -51,4 +53,8 @@ public class Person {
     public void setAge(Integer age) {
         this.age = age;
     }
+    public boolean isValida() {
+        return !Strings.isBlank(name) && !Strings.isBlank(email) && bday != null;
+    }
+
 }
